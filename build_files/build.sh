@@ -9,15 +9,6 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-
-
-
-
-
-
-
-
-dnf5 install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf5 -y copr enable bieszczaders/kernel-cachyos
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 
@@ -30,10 +21,9 @@ dnf5 install -y steam mangohud gamemode
 dnf5 install -y plasma-workspace-x11 btop neovim fastfetch git-cola
 dnf5 install -y tuned-utils tuned-gtk tuned-profiles-atomic tuned-profiles-cpu-partitioning 
 
-dnf5 install -y install akmod-nvidia xorg-x11-drv-nvidia
-
 dnf5 -y copr disable bieszczaders/kernel-cachyos
 dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
