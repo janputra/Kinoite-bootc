@@ -9,11 +9,6 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf5 -y copr enable bieszczaders/kernel-cachyos
-dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
-
-dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra 
-dnf5 -y install kernel-cachyos kernel-cachyos-devel-matched libcap-ng libcap-ng-devel procps-ng procps-ng-devel uksmd scx-scheds
 # this installs a package from fedora repos
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
 dnf5 install -y screen virt-manager samba fcitx5 fcitx5-hangul code
@@ -21,8 +16,6 @@ dnf5 install -y steam mangohud gamemode
 dnf5 install -y plasma-workspace-x11 btop neovim fastfetch git-cola
 dnf5 install -y tuned-utils tuned-gtk tuned-profiles-atomic tuned-profiles-cpu-partitioning 
 
-dnf5 -y copr disable bieszczaders/kernel-cachyos
-dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
 # Use a COPR Example:
 #
