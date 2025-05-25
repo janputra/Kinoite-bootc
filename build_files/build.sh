@@ -27,4 +27,3 @@ dnf5 install -y tuned-utils tuned-gtk tuned-profiles-atomic tuned-profiles-cpu-p
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-sudo systemctl enable scx.service

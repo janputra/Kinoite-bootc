@@ -33,8 +33,9 @@ RUN dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-
     kernel-cachyos-modules \
     kernel-cachyos-devel \
     kernel-headers \
-    uksmd \ 
-    scx-scheds  
+    uksmd 
+    
+RUN setsebool -P domain_kernel_load_modules on
     
 
 # Install NVIDIA driver
