@@ -39,7 +39,7 @@ RUN setsebool -P domain_kernel_load_modules on
     
 
 # Install NVIDIA driver
-RUN rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia
+RUN rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia VirtualBox
 
 RUN akmods --force --kernels "$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}' kernel-cachyos-devel)"  && dracut --regenerate-all --force
 
